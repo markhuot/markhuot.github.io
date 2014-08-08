@@ -1,4 +1,3 @@
 ---
-var: test
 ---
 Hello world.
