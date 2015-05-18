@@ -1,5 +1,6 @@
 ---
 title: Vertical Spacing
+excerpt: Extending .alpha, .beta, .etc… I've started classing my vertical spacing abstractly too.
 ---
 
 I've learned to treat my headings pretty abstractely. I don't add a ton of styles on a naked `h2`, for example. Instead I put my styles on a classed `.beta` element so that I can re-use that style on a `p` or a `strong` element if the need arises. This works great and has really helped me keep my front-end as flexible as possible. Where it breaks down, for me, is when I start applying some vertical rhythm to the page. Sometimes I need an `h2` inside a module to have no vertical margin because it has a bottom border, or some background box around it. In these cases I find myself overriding the defauts with junk like,
