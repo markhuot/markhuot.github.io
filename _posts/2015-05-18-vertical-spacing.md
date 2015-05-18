@@ -4,7 +4,7 @@ title: Vertical Spacing
 
 At Happy Cog we treat our headings very abstractely. We don't add a ton of styles on a naked `h2`, for example. Instead we put our styles on a classed `.beta` element so that we can re-use that style on a `P` or a `strong` element if the need arises. This works great and has really helped us keep our front-end as flexiable as we need it to be. Where it breaks down for me is when we start applying some vertical rythym to our page. Sometimes we need an `H2` inside a module to have no vertical margin because it's got a bottom border, or some background box around it. In these cases I find myself overriding the defauts with junk like,
 
-```css
+{% highlight css %}
 .beta {
   font-size: 48px;
   margin-bottom: 36px /* 0.75em */;
@@ -12,7 +12,7 @@ At Happy Cog we treat our headings very abstractely. We don't add a ton of style
 .beta-collapsed {
   margin-bottom: 0;
 }
-```
+{% endhighlight %}
 
 That gets a lot worse once you add breakpoints,
 
