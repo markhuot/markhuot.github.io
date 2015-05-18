@@ -2,7 +2,7 @@
 title: Vertical Spacing
 ---
 
-At Happy Cog we treat our headings very abstractely. We don't add a ton of styles on a naked `h2`, for example. Instead we put our styles on a classed `.beta` element so that we can re-use that style on a `P` or a `strong` element if the need arises. This works great and has really helped us keep our front-end as flexiable as we need it to be. Where it breaks down for me is when we start applying some vertical rythym to our page. Sometimes we need an `H2` inside a module to have no vertical margin because it's got a bottom border, or some background box around it. In these cases I find myself overriding the defauts with junk like,
+I've learned to treat my headings pretty abstractely. I don't add a ton of styles on a naked `h2`, for example. Instead I put my styles on a classed `.beta` element so that I can re-use that style on a `p` or a `strong` element if the need arises. This works great and has really helped me keep my front-end as flexible as possible. Where it breaks down, for me, is when I start applying some vertical rhythm to the page. Sometimes I need an `h2` inside a module to have no vertical margin because it has a bottom border, or some background box around it. In these cases I find myself overriding the defauts with junk like,
 
 {% highlight scss %}
 .beta {
@@ -52,8 +52,8 @@ Gross, right? Well, stealing a little bit from SMACSS I've been exploring using 
 Now I can do things like,
 
 {% highlight html %}
-<h2 class="beta vspace-2>...</h2>
-<div class="hero vspace-1>...</div>
+<h2 class="beta vspace-2">...</h2>
+<div class="hero vspace-1">...</div>
 {% endhighlight %}
 
 Now I have the flexibilty to re-use my hero and beta elements wherever I need to without having to override anything.
