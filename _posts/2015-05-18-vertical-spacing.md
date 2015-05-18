@@ -32,7 +32,7 @@ That gets a lot worse once you add breakpoints,
 }
 {% endhighlight %}
 
-Gross, right? Well, stealing a little bit from SMACSS I've been exploring using unique classes for my vertical spacing too. I'm not sure what to name them yet, but I'm thinking something along the lines of,
+Gross, right? Well, I've been exploring using unique classes for my vertical spacing too. I'm not sure what to name them yet, but I'm thinking something along the lines of,
 
 {% highlight scss %}
 .vspace-1 {
@@ -54,6 +54,7 @@ Now I can do things like,
 {% highlight html %}
 <h2 class="beta vspace-2">...</h2>
 <div class="hero vspace-1">...</div>
+<nav class="vspace-1">...</nav>
 {% endhighlight %}
 
-Now I have the flexibilty to re-use my hero and beta elements wherever I need to without having to override anything.
+Now I have the flexibility to re-use my hero and beta elements wherever I need to without having to override anything.
