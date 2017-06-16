@@ -53,11 +53,11 @@ $
 
 A whole lot of nothing, because my `Button` class doesn't actually do anything. It just sets up a reusable component that my application can use as it sees fit. So, not what I wanted, but this is still sort of success, right? I now have a format that I can write my HTML in that can be re-used and (more importantly) `require`-d later on in any number of projects.
 
-At this point, my Button is a stateless “component” (in React lingo). I need to make it do something but at this point I don't even know what that means. I guess “do something” means render my button out to a page. But in order to see all this in a browser I'll need to create a web server that can accept requests from a browser, compile and render React code, and then return a status code with that HTML. That's crazy talk for where I am. Right now I'll settle with just rendering out my `Button` to the console.
+At this point, my Button is a stateless "component" (in React lingo). I need to make it do something but at this point I don't even know what that means. I guess "do something" means render my button out to a page. But in order to see all this in a browser I'll need to create a web server that can accept requests from a browser, compile and render React code, and then return a status code with that HTML. That's crazy talk for where I am. Right now I'll settle with just rendering out my `Button` to the console.
 
 ## Rendering
 
-React is, for the most part, a front-end framework. I'd certainly consider it a front-end oriented framework. Because of this leaning, the limited code I've written so far doesn't do much on the server (or in the terminal) so I'll need to add to it. `react-dom` handles this for me I think. Specifically, `react-dom/server` is the module that seems to take a react element and render it out to a string that can then be returned to a browser. I could add some `react-dom/server` code to `Button.js` but then I wouldn't have a stateless component any more. I'd have some hodgepodge mix of front-and-back-end code all mashed into `Button.js`. Instead, I'll do like my front-end self wants and make an `index.js` that will do the work for me. Within my index I'll want to load up my re-usable button and render it out to the “page” which, right now, is just the terminal. So, `index.js` needs some require statements up top to load everything in and then a call to the render function.
+React is, for the most part, a front-end framework. I'd certainly consider it a front-end oriented framework. Because of this leaning, the limited code I've written so far doesn't do much on the server (or in the terminal) so I'll need to add to it. `react-dom` handles this for me I think. Specifically, `react-dom/server` is the module that seems to take a react element and render it out to a string that can then be returned to a browser. I could add some `react-dom/server` code to `Button.js` but then I wouldn't have a stateless component any more. I'd have some hodgepodge mix of front-and-back-end code all mashed into `Button.js`. Instead, I'll do like my front-end self wants and make an `index.js` that will do the work for me. Within my index I'll want to load up my re-usable button and render it out to the "page" which, right now, is just the terminal. So, `index.js` needs some require statements up top to load everything in and then a call to the render function.
 
 ```javascript
 const React = require('react');
@@ -67,7 +67,7 @@ const Button = require('./Button.js');
 ReactDOMServer.renderToString(Button);
 ```
 
-That seems to make sense to me, I'm asking it to render Button, which is the “component” I just created above. If everything goes well I'll have `<button>Hi</button>` printed to the screen.
+That seems to make sense to me, I'm asking it to render Button, which is the "component" I just created above. If everything goes well I'll have `<button>Hi</button>` printed to the screen.
 
 ```shell
 $ node index.js
@@ -143,16 +143,16 @@ Okay… maybe today, it's only 2am and this is fun!
 
 ## Nesting
 
-I wanted to make this a little more involved and needed something to work against. I searched Dribble for “widget” and found this movie poster that could probably be “React-ified" without too much trouble.
+I wanted to make this a little more involved and needed something to work against. I searched Dribble for "widget" and found this movie poster that could probably be "React-ified" without too much trouble.
 
 https://dribbble.com/shots/2197748-Day-049-Movie-Card
 
-In there, I've got a few “components” to worry about:
+In there, I've got a few "components" to worry about:
 
-1. A “photo” component for JGL's smiling face
-2. Maybe a “movie details” component for the text
-3. A “rating” component for the 7.5/10?
-4. A “button” component for the “Watch Trailer” link
+1. A "photo" component for JGL's smiling face
+2. Maybe a "movie details" component for the text
+3. A "rating" component for the 7.5/10?
+4. A "button" component for the "Watch Trailer" link
 
 So, let's set them all up and see what happens. First thing's first, let's create our `MoviePoster.js` component,
 
@@ -185,7 +185,7 @@ module.exports = class MoviePoster extends React.Component {
   render() {
     return React.createElement(
       'div',
-      {className: “movie-poster”},
+      {className: "movie-poster"},
       React.createElement(Photo),
       React.createElement(MovieDetails),
       React.createElement(Rating),
@@ -195,7 +195,7 @@ module.exports = class MoviePoster extends React.Component {
 }
 ```
 
-More `React.createElement` here because, again, I can't pass `Photo` to React, I need to turn it into an actual “DOM” element for it to do anything. This is getting a bit tedious and probably means it's time for some JSX. But, before going there let's adjust `index.js` to point to our `MoviePoster.js` and see what happens. `index.js` now looks like this,
+More `React.createElement` here because, again, I can't pass `Photo` to React, I need to turn it into an actual "DOM" element for it to do anything. This is getting a bit tedious and probably means it's time for some JSX. But, before going there let's adjust `index.js` to point to our `MoviePoster.js` and see what happens. `index.js` now looks like this,
 
 ```javascript
 const React = require('react');
@@ -208,7 +208,7 @@ console.log(ReactDOMServer.renderToString(React.createElement(MoviePoster)));
 Running `index.js` gives us,
 
 ```shell
-<div data-reactroot="" data-reactid="1" data-react-checksum="-447862399"><div data-reactid="2">Photo</div><div data-reactid="3">MovieDetails</div><div data-reactid=“4”>Rating</div><button data-reactid=“5”>hi</button></div>
+<div data-reactroot="" data-reactid="1" data-react-checksum="-447862399"><div data-reactid="2">Photo</div><div data-reactid="3">MovieDetails</div><div data-reactid="4">Rating</div><button data-reactid="5">hi</button></div>
 ```
 
 That's each of the pieces all rendering out to the console! But, before I go any further it's time to drop all that `React.createElement` noise for some JSX.
