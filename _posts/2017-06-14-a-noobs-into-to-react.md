@@ -3,11 +3,11 @@ title: A n00bs intro to React
 excerpt: Diving in head first to React.js
 ---
 
-00 Intro
+## Intro
 
 Confession: I've wanted to learn React for some time. I've been looking for the right project to dive head first into React and it just hasn't happened yet. I've been using Drupal and CraftCMS for my back-and-front-end needs without issue for a while now and I couldn't justify the additional technical overhead of a Node front-end to really make it worth it. So, I've decided to stop waiting and just dive in anyway. This is my personal log of the journey from React n00b to something slightly better than a React n00b…
 
-Requirements
+## Requirements
 
 Like any good developer: I usually start writing code and worry about requirements later. Still, here's some swirling thoughts that guided my initial work,
 
@@ -16,7 +16,7 @@ Like any good developer: I usually start writing code and worry about requiremen
 3. CSS should be a part of this. I'm not exactly sure what that means yet, but I do know that I want to be able to bundle my CSS up with my Javascript modules so it's composable with everything else. This probably means something like css-modules but, again, we'll see.
 4. Everything should be re-usable. For too long I've been writing CSS (Less, Sass, etc…) that compiles to CSS that I then need to copy/past over to other projects. I've tried using Bower to improve this, but I still end up (somewhere) copying HTML or class names out of sample files into my actual project. I'd like to avoid all that and be able to publish a bunch of HTML to NPM (or a private registry) and simply `require` it the next time it's needed.
 
-yarn init
+## yarn init
 
 With that out of the way it was time to dive in. The first step was to set up the basis of my pretend project. I could have used any number of boilerplates out there but I wanted to start fresh and understand the roots before I selected something off the shelf. To that end I started as simply as possible, an empty folder: `mkdir my-great-project`.
 
@@ -32,7 +32,7 @@ yarn add react react-dom
 
 I know I need `react` and if I've been reading tutorials correctly I need `react-dom` to make it appear on the page. I guess I could swap `react-dom` with some other renderer if I wanted to go `react-native` or something like that. ¯\_(ツ)_/¯
 
-Do something
+## Do something
 
 At this point I think I can use regular old React to make something happen. React works with components and the most basic component I could think of was a button component so I added `Button.js` with some boilerplate React code…
 
@@ -57,7 +57,7 @@ A whole lot of nothing, because my `Button` class doesn't actually do anything. 
 
 At this point, my Button is a stateless “component” (in React lingo). I need to make it do something but at this point I don't even know what that means. I guess “do something” means render my button out to a page. But in order to see all this in a browser I'll need to create a web server that can accept requests from a browser, compile and render React code, and then return a status code with that HTML. That's crazy talk for where I am. Right now I'll settle with just rendering out my `Button` to the console.
 
-Rendering
+## Rendering
 
 React is, for the most part, a front-end framework. I'd certainly consider it a front-end oriented framework. Because of this leaning, the limited code I've written so far doesn't do much on the server (or in the terminal) so I'll need to add to it. `react-dom` handles this for me I think. Specifically, `react-dom/server` is the module that seems to take a react element and render it out to a string that can then be returned to a browser. I could add some `react-dom/server` code to `Button.js` but then I wouldn't have a stateless component any more. I'd have some hodgepodge mix of front-and-back-end code all mashed into `Button.js`. Instead, I'll do like my front-end self wants and make an `index.js` that will do the work for me. Within my index I'll want to load up my re-usable button and render it out to the “page” which, right now, is just the terminal. So, `index.js` needs some require statements up top to load everything in and then a call to the render function.
 
@@ -143,7 +143,7 @@ $ node index.js
 
 Okay… maybe today, it's only 2am and this is fun!
 
-Nesting
+## Nesting
 
 I wanted to make this a little more involved and needed something to work against. I searched Dribble for “widget” and found this movie poster that could probably be “React-ified" without too much trouble.
 
