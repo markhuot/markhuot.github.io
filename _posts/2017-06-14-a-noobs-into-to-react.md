@@ -7,7 +7,7 @@ Confession: I've wanted to learn React for some time. I've been looking for the 
 
 ## Requirements
 
-Like any good developer: I usually start writing code and worry about requirements later. Still, here's some swirling thoughts that guided my initial work,
+Like any good developer: I usually start writing code and worry about requirements later 😏. Still, here's some swirling thoughts that guided my initial work,
 
 1. The end result must work with out Javascript. This means that I'll have to use server side rendering. Ideally, I'll use some form of progressive enhancement that renders a stub of a page to baseline users and enhances it with Javascript after the initial render. There are a few different reasons for this requirement but most broadly it's just the right thing to do. SEO needs HTML to crawl (sure, sometimes JS is executed, but sometimes it's not…). Crummy mobile or public hot spots are slow as molasses and waiting for the entire React lib to download is just painful. Also, I don't want to deal with all the janky JS-based routing libs out there just to see content on the page.
 2. I love me some ES6 + Babel + Webpack or whatever the latest hotness is today. Shiny isn't always good but I see a lot of benefit to using native Node modules/require statements in my code. Typescript is an obvious next step and I may or may not go down that road, but I'll start without.
