@@ -21,11 +21,11 @@ With that out of the way it was time to dive in. The first step was to set up th
 With nothing to start from I had to set up my package manager and require the base libs myself. This was done with,
 
 ```shell
-cd Sites
-mkdir my-great-project
-cd my-great-project
-yarn init
-yarn add react react-dom
+$ cd Sites
+$ mkdir my-great-project
+$ cd my-great-project
+$ yarn init
+$ yarn add react react-dom
 ```
 
 I know I need `react` and if I've been reading tutorials correctly I need `react-dom` to make it appear on the page. I guess I could swap `react-dom` with some other renderer if I wanted to go `react-native` or something like that. ¯\_(ツ)_/¯
