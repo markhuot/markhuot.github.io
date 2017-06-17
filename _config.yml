@@ -4,4 +4,4 @@ defaults:
       path: ""
     values:
       layout: default
-permalink: ":title"
+permalink: "/:year/:month/:day/:title"
