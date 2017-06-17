@@ -215,4 +215,4 @@ That's each of the pieces all rendering out to the console! But, before I go any
 
 —
 
-Note: this is a journal with no timeline, budget, or strategy. If you enjoyed reading along please let me know. If you have questions or comments, please leave them here and I'll do my best to respond.
+Note: this is a journal with no timeline, budget, or strategy. If you enjoyed reading along please let me know.
