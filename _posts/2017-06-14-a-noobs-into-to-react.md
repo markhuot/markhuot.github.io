@@ -145,7 +145,7 @@ Okay… maybe today, it's only 2am and this is fun!
 
 I wanted to make this a little more involved and needed something to work against. I searched Dribble for "widget" and found this movie poster that could probably be "React-ified" without too much trouble.
 
-https://dribbble.com/shots/2197748-Day-049-Movie-Card
+[https://dribbble.com/shots/2197748-Day-049-Movie-Card](https://dribbble.com/shots/2197748-Day-049-Movie-Card)
 
 In there, I've got a few "components" to worry about:
 
