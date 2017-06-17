@@ -12,13 +12,13 @@ Like any good developer: I usually start writing code and worry about requiremen
 1. The end result must work with out Javascript. This means that I'll have to use server side rendering. Ideally, I'll use some form of progressive enhancement that renders a stub of a page to baseline users and enhances it with Javascript after the initial render. There are a few different reasons for this requirement but most broadly it's just the right thing to do. SEO needs HTML to crawl (sure, sometimes JS is executed, but sometimes it's not…). Crummy mobile or public hot spots are slow as molasses and waiting for the entire React lib to download is just painful. Also, I don't want to deal with all the janky JS-based routing libs out there just to see content on a page load.
 2. I love me some ES6 + Babel + Webpack or whatever the latest hotness is today. Shiny isn't always good but I see a lot of benefit to using native Node modules/require statements in my code. Typescript is an obvious next step and I may or may not go down that road, but I'll start without.
 3. CSS should be a part of this. I'm not exactly sure what that means yet, but I do know that I want to be able to bundle my CSS up with my Javascript modules so it's composable with everything else. This probably means something like css-modules but, again, we'll see.
-4. Everything should be re-usable. For too long I've been writing CSS (Less, Sass, etc…) that compiles to CSS that I then need to copy/past over to the next project. I've tried using Bower to improve this, but I still end up (somewhere) copying HTML or class names out of sample files into my actual project. I'd like to avoid all that and be able to publish a bunch of HTML to NPM (or a private registry) and simply `require` it the next time it's needed.
+4. Everything should be re-usable. For too long I've been writing CSS (Less, Sass, etc…) that I need to copy/paste from project to project. I've tried using Bower to improve this, but I still end up (somewhere) copying code out of sample files into my actual project. I'd like to avoid all that and be able to publish a bunch of HTML to NPM (or a private registry) and simply `require` it the next time it's needed.
 
 ## yarn init
 
-With that out of the way it was time to dive in. The first step was to set up the basis of my pretend project. I could have used any number of boilerplates out there but I wanted to start fresh and understand the roots before I selected something off the shelf. To that end I started as simply as possible, an empty folder: `mkdir my-great-project`.
+With that out of the way it was time to dive in. The first step was to set up the basis of my pretend project. I could have used any number of boilerplates out there but I wanted to start fresh and understand the basics before I selected something off the shelf. I started as simply as possible, an empty folder: `mkdir my-great-project`.
 
-With nothing to start from I had to set up my package manager and require the base libs myself. This was done with,
+With nothing to start from I set up my package manager and required the base libs myself. This was done with,
 
 ```shell
 $ cd Sites
