@@ -114,7 +114,7 @@ module.exports = class Button extends React.Component {
 And running that,
 
 ```shell
-$ node index.js 
+$ node index.js
 $
 ```
 
@@ -133,7 +133,7 @@ console.log(ReactDOMServer.renderToString(React.createElement(Button)));
 And running that,
 
 ```shell
-$ node index.js 
+$ node index.js
 <button data-reactroot="" data-reactid="1" data-react-checksum="314905309">hi</button>
 ```
 
@@ -217,4 +217,4 @@ That's each of the pieces all rendering out to the console! But, before I go any
 
 —
 
-Note: this is a journal with no timeline, budget, or strategy. If you enjoyed reading along please let me know.
+Note: this is a journal with no timeline, budget, or strategy. If you enjoyed reading along please let me know [@markhuot.com](https://twitter.com/markhuot).
