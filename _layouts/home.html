@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>markhuot.com</title>
-</head>
-<body>
+{% include head.html %}
   {{ content }}
+  <ul>
+  {% for post in site.posts %}	
+    <li>&rdquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}	
+  </ul>
 </body>
 </html>
