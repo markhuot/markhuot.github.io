@@ -9,6 +9,13 @@ There is plenty of controversy around JSX. The cross-mingling of Javascript and 
 
 The thing that you have to accept with JSX (and really React, in general) is that JavaScript is now your point of truth. I think for a lot of front-end developers the CSS is a point of truth, for good reason. If you're most comfortable in CSS then creating a new Button style would, obvious to you, start in CSS. However, for many JavaScript developers, who shy away from CSS, treating JavaScript as that point of truth is obvious. What I like about React is that it sort of straddles both approaches. With components I should create `Button.js` and `Button.css` at the same time. One doesn't really work without the other. And, best of all, trying to add my button to a global `styles.css` or tacking the CSS somewhere it doesn't belong will only make things harder.
 
+So, Jacascript is my truth and I've accepted HTML in my Javascript. Let's move on.
+
+Babel is a `yarn add` away, so let's add it,
+
+```shell
+$ yarn add babel babel-preset-env babel-plugin-transform-react-jsx
+```
 
 
 
