@@ -195,9 +195,9 @@ module.exports = class MoviePoster extends React.Component {
 }
 ```
 
-More `React.createElement` here because, again, I can't pass the uninstantiated `Photo` class directly in to React, I need to turn it into an actual "DOM" element for it to do anything. All these `createElement` calls are getting a bit tedious though so it is probably time for some JSX.
+More calls to `React.createElement` here because I can't pass the uninstantiated `Photo` class directly in to React, I need to turn it into an actual "DOM" element for it to do anything. All these `createElement` calls are getting a bit tedious though so it is probably time for some JSX.
 
-But, before reconfiguring everything let's adjust `index.js` to point to our `MoviePoster.js` and see what happens. `index.js` now looks like this,
+But, before reconfiguring everything let's adjust `index.js` one last time to point to our `MoviePoster.js` and see what happens. `index.js` now looks like this,
 
 ```javascript
 const React = require('react');
