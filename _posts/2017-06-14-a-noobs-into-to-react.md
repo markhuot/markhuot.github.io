@@ -164,7 +164,7 @@ module.exports = class MoviePoster extends React.Component {
     return React.createElement(…
 ```
 
-Hrm… my first issue: the movie poster doesn't really do anything. It's sort of just a container for all the inner components. But, if I've learned anything from my React reading it's that every component must have one (and only one) root element. I guess we'll make that a `div`. With that decided we'll need to make our inner components next, `Photo.js`, `MovieDetails.js`, `Rating.js`, and our existing `Button.js`. Each of these could have some placeholder like this for now,
+Hrm… my first issue: the movie poster doesn't really do anything. It's only real purpose is to serve as a container for all the inner components. But, if I've learned anything from my React reading it's that every component must have one (and only one) root element. I guess we'll make it a nondescript `div` then. With that decided, we'll need to make our inner components next: `Photo.js`, `MovieDetails.js`, `Rating.js`, and our existing `Button.js`. Each of these could have some placeholder like this for now,
 
 ```javascript
 const React = require('react');
@@ -195,7 +195,9 @@ module.exports = class MoviePoster extends React.Component {
 }
 ```
 
-More `React.createElement` here because, again, I can't pass `Photo` to React, I need to turn it into an actual "DOM" element for it to do anything. This is getting a bit tedious and probably means it's time for some JSX. But, before going there let's adjust `index.js` to point to our `MoviePoster.js` and see what happens. `index.js` now looks like this,
+More `React.createElement` here because, again, I can't pass the uninstantiated `Photo` class directly in to React, I need to turn it into an actual "DOM" element for it to do anything. All these `createElement` calls are getting a bit tedious though so it is probably time for some JSX.
+
+But, before reconfiguring everything let's adjust `index.js` to point to our `MoviePoster.js` and see what happens. `index.js` now looks like this,
 
 ```javascript
 const React = require('react');
