@@ -1,6 +1,7 @@
 ---
 title: Transpile all the things
 excerpt: Adding complexity for the sake of simplicity
+draft: true
 ---
 
 Writing a whole bunch of `React. createElement` calls gets tiring really quickly. So instead, I'd like to use JSX and just write `<Button/>`. Unfortunately, JSX isn't actually a thing that Jacascript understands. Because of that, you need some sort of build step to convert the JSX back in to vanilla JavaScript method names. Personally, I like Babel for this, but there are a few options today if Babel isn't your thing.

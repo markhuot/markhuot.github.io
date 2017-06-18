@@ -3,7 +3,9 @@
     {{ content }}
     <ul>
     {% for post in site.posts %}
-      <li class="post-list-item"><a href="{{ post.url }}">{{ post.title }}</a> {{ post.excerpt }}</li>
+      {% if post.draft == false %}
+        <li class="post-list-item"><a href="{{ post.url }}">{{ post.title }}</a> {{ post.excerpt }}</li>
+      {% endif %}
     {% endfor %}
     </ul>
   </div>
