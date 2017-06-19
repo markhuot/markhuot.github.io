@@ -1,6 +1,6 @@
 ---
 title: A n00bs intro to React
-excerpt: Diving in head first to React.js
+excerpt: Diving in head first in to React.js
 ---
 
 Confession: I've wanted to learn React for some time. I've been looking for the right project to dive head first into React and it just hasn't happened yet. I'm not too ashamed to admit I've been using jQuery and vanilla JavaScript for a while now and couldn't justify the additional technical overhead of a full React front-end to really make it worth it. Blah, enough waiting, enough excuses, I've decided to just dive right in. This is my personal log of the journey from React n00b to something slightly better than a React n00b…
