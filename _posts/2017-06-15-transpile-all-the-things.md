@@ -39,6 +39,12 @@ $ babel-node index.js
 
 ```
 
+Excellent, everything actually worked as expected. Now I have a much more terse syntax to define my markup. This should make things much easier to read and, eventually, debug.
+
+Now, like I said last time: HTML in my JavaScript feels wrong on so many levels… but the more I look at the succinct definition of a React component the more I like it. Being able to open one file and see everything there is to know about a button is a powerful process. It'll make on-boarding other developers and refactoring so much easier. Plus: one of my long standing issues with HTML in JavaScript is that you have to shove everything into a string. With JSX you actually have a syntax that can be statically analyzed and linted along side my JavaScript. That's going to reduce a lot of headaches. `/rant` `/justification`
+
+
+
 
 
 
