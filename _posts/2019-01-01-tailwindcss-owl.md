@@ -14,7 +14,7 @@ One thing that never sat correctly with me in Tailwind is inter-component spacin
 To do this you could create something like this,
 
 ```twig
-<a href="#" class="media-block {{ not isFirst ?: 'mt-10' }}">
+<a href="#" class="media-block {% raw %}{{ not isFirst ?: 'mt-10' }}{% endraw %}">
     <img/>
     <p/>
 </a>
@@ -23,7 +23,7 @@ To do this you could create something like this,
 And that works well enough, but what if the sidebar needs a smaller margin top, then you've got,
 
 ```twig
-<a href="#" class="media-block {{ defaultSpace ?: 'mt-10' }} {{ smallSpace ?: 'mt-4' }}">
+<a href="#" class="media-block {% raw %}{{ defaultSpace ?: 'mt-10' }}{% endraw %} {% raw %}{{ smallSpace ?: 'mt-4' }}{% endraw %}">
     <img/>
     <p/>
 </a>
@@ -31,7 +31,7 @@ And that works well enough, but what if the sidebar needs a smaller margin top, 
 
 Now we can pass in to our component whether it should have a "default" amount of spacing or a "small" amount of spacing. Surly you can see where this is going. Now someone decides to use the media block _inside_ another component and to match this other components spacing we need a third spacing size. Okay…
 
-```liquid
+```twig
 {% raw %}
 {% set classes = [
     defaultSpace ?: 'mt-10',
