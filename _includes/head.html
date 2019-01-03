@@ -87,6 +87,12 @@
     body {
       margin: 0;
     }
+    a, a:visited {
+      color: blue;
+    }
+    a:hover {
+      text-decoration: none;
+    }
     p, ul, ol {
       line-height: 1.5;
     }
@@ -110,6 +116,8 @@
     }
     pre, code {
       background: whiteSmoke;
+      padding: 5px;
+      border-radius: 1px 2px;
     }
     .language-shell pre {
       white-space: pre-wrap;
@@ -118,13 +126,12 @@
     .back {
       text-decoration: none;
       font-size: 0.8rem;
-      color: blue;
+    }
+    .back:hover {
+      text-decoration: underline;
     }
     .post-list-item {
       color: #999;
-    }
-    .post-list-item a {
-      color: blue;
     }
     @media (min-width: 800px) {
       .content {
@@ -135,6 +142,28 @@
         line-height: 1.6;
         font-size: 1.2rem;
       }
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #1C1D1C;
+        color: rgb(220, 220, 220);
+      }
+      a, a:visited {
+        color: rgb(27, 173, 248);
+      }
+      pre, code {
+        background: rgba(255,255,255,0.1);
+      }
+      pre code {
+        background: none;
+      }
+      h2, h3, h4, h5, h6 {
+        color: rgb(50, 215, 75);
+      }
+      .highlight .s { color: rgb(50, 215, 75) } /* Literal.String */
+      .highlight .s1 { color: rgb(50, 215, 75) } /* Literal.String.Single */
+      .highlight .k { color: rgb(237, 48, 122) } /* Keyword */
+      .highlight .kd { color: rgb(237, 48, 122) } /* Keyword.Declaration */
     }
   </style>
 </head>

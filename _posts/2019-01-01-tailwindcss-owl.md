@@ -32,8 +32,7 @@ And that works well enough, but what if the sidebar needs a smaller margin top, 
 Now we can tell our component whether it should have a "default" amount of spacing or a "small" amount of spacing. Surly you can see where this is going. Eventually someone decides to use the media block _inside_ another component and to match the other component's spacing we need a third spacing size. Okay…
 
 ```html
-{% raw %}
-{% set classes = [
+{% raw %}{% set classes = [
     defaultSpace ?: 'mt-10',
     mediumSpace ?: 'mt-6'
     smallSpace ?: 'mt-4',
