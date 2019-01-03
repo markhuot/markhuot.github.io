@@ -93,4 +93,4 @@ Within Tailwind we already have nice `margin` values that serve a similar purpos
 
 You can read more and install it here,
 
-https://www.npmjs.com/package/tailwindcss-owl
+[https://www.npmjs.com/package/tailwindcss-owl](https://www.npmjs.com/package/tailwindcss-owl)
