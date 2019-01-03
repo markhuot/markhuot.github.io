@@ -3,12 +3,12 @@ title: Tailwinds and The Lobotomized Owl Selector
 excerpt: Playing with spacing
 ---
 
-I love Tailwind CSS. Like, a lot. I know it's not "pure" and that it bloats my HTML but at the end of the day it's the fastest, easiest, most bug free approach to styling that I've found. There's a lot of love (and hate) mail for Tailwind around the web so I won't get in to it too deeply here.
+I love [Tailwind CSS](https://tailwindcss.com). Like, a lot. I know it's not "pure" and that it bloats my HTML but at the end of the day it's the fastest, easiest, most bug free approach to styling that I've found. There's a lot of love (and hate) mail for Tailwind around the web so I won't get in to it too deeply here.
 
-One thing that never sat correctly with me in Tailwind is inter-component spacing. If I'm working on a project and I have something like `media-block.twig` then I would assume that everything in my media block is specific to the media block itself. Unfortunately that's rarely the case. Take the following example,
+One thing that never sat correctly with me in Tailwind is its inter-component spacing. In most of my projects I have a component named something along the lines of `media-block.twig` that is used to render an image, headline, and excerpt. This component is used _everywhere_ from lists of blog posts to lists of people, downloads, resources, etc… Being so versitle I would like for everything in the media block component to be very specific to the media block itself. Unfortunately that's rarely the case. Take the following example,
 
-1. You have a list of blog posts in your main content area
-2. You have a short list of "external links" in your sidebar
+1. You have a list of blog posts in your main content area that are spaced out for easy scanning
+2. You have a short list of "external links" in your sidebar that are tighter because the text is smaller, focus is narrower, etc…
 3. Both of these elements should use the media block component
 
 To do this you could create something like this,
