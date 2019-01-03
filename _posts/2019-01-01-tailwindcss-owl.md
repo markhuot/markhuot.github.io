@@ -32,11 +32,13 @@ And that works well enough, but what if the sidebar needs a smaller margin top, 
 Now we can pass in to our component whether it should have a "default" amount of spacing or a "small" amount of spacing. Surly you can see where this is going. Now someone decides to use the media block _inside_ another component and to match this other components spacing we need a third spacing size. Okay…
 
 ```twig
+{% raw %}
 {% set classes = [
     defaultSpace ?: 'mt-10',
     mediumSpace ?: 'mt-6'
     smallSpace ?: 'mt-4',
 ] %}
+{% endraw %}
 <a href="#" class="media-block {{ classes|array_filter|join(' ' ) }}">
     <img…
     <p…
