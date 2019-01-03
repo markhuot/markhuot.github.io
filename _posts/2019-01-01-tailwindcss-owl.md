@@ -39,7 +39,7 @@ Now we can tell our component whether it should have a "default" amount of spaci
     smallSpace ?: 'mt-4',
 ] %}
 {% endraw %}
-<a href="#" class="media-block {{ classes|array_filter|join(' ' ) }}">
+<a href="#" class="media-block {% raw %}{{ classes|array_filter|join(' ' ) }}{% endraw %}">
     <img/>
     <p/>
 </a>
