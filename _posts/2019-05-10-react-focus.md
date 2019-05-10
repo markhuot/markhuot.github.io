@@ -114,6 +114,8 @@ function Todos (props) {
     }, [todos])
 ```
 
+You can see a full working example here, https://codepen.io/markhuot/pen/mYVqYj
+
 This is all possible pre-hooks in react as well but there's something about the procedural flow of hooks that makes this all pretty easy to read through, top to bottom. The power of `useRef` was also _completely_ lost on me until the Hooks renaissance. I have a feeling I'll be using refs a whole lot more from now on.
 
 Also, if you're interested in reading more about refs or about Hooks in general Dan has a similar writeup about [using refs to solve some `setInterval` issues](https://overreacted.io/making-setinterval-declarative-with-react-hooks/).
