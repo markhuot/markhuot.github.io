@@ -7,13 +7,13 @@ draft: true
 I've been using React a fair amount lately and really enjoy a lot of what it offers. The ability to easily think of state in terms of real _objects_ and not a paticular arrangement of DOM nodes or class names is a huge help. For example take the canonical example of managing a list of Todos. In HTML you may have,
 
 ```html
-<ul>
+<ul id="todos">
     <li>First todo</li>
     <li>Second todo</li>
 </ul>
 ```
 
-With vanilla JS I can add a third todo by `todos.appendChild(document.createElement('li'))` and that works to a certain point. But once you start adding in the mayhem of state and you have to worry about whether a todo is completed things go off the rails. For example, if a todo is completed let's add a class name and a `<s>` element for semantic purposes. Now we've got,
+With vanilla JS I can add a third todo by calling `appendChild()` on the `<ul>` and that works to a certain point. But once you start adding in the mayhem of state and you have to worry about whether a todo is completed things go off the rails. For example, if a todo is completed let's add a class name and a `<s>` element for semantic purposes. Now we've got,
 
 ```html
 <ul>
@@ -93,7 +93,7 @@ function Todos (props) {
 
 The bug is in the `addTodo` event callback. When the button is clicked I'd _like_ to add the todo to my state and then immediately call `todo.focus()` but I can't do that because React is going to first update the state and _then_ batch together updates in to a single DOM modification. That means that _some_ amount of time is going to pass between me updating the state and the `<li>` actually appearing on the page (like 1 or 2ms of time, but still, I can't just write `.focus()` on the next line).
 
-What we need to do is somehow update our state and then tell React, after you're done, please call `.focus()` for me. We can do that using two fancy new hooks.`useRef` allows us to retain a value object through React's render passes. When we're calling `addTodo` we can set a ref and it'll still be available to us the next time React renders the component. This answers the first half of "after you're done, please call `.focus()`" part of the equation. `useEffect` allows us to answer the second half of the question and provides us a place to interact with the rendered HTML/DOM. The updates look like this,
+What we need to do is somehow update our state and then tell React, after you're done, please call `.focus()` for me. We can do that using two fancy new hooks. `useRef` allows us to retain a value object through React's render passes. When we're calling `addTodo` we can set a ref and it'll still be available to us the next time React renders the component. This answers the first half of "after you're done, please call `.focus()`" part of the equation. `useEffect` allows us to answer the second half of the question and provides us a place to interact with the rendered HTML/DOM. The updates look like this,
 
 ```jsx
 function Todos (props) {
@@ -106,10 +106,14 @@ function Todos (props) {
         focusIndex.current = newTodos.size // track on the next render we want to focus the last todo
     }
     
-    useEffect(() => {
+    useEffect(() => { // called _after_ the component is rendered out to HTML
         if (focusIndex.current !== null) { // if there is something to focus on
             refs[focusIndex.current].current.focus() // focus on the requested element
         }
         focusIndex.current = null // after the render forget the requested focus so we can do it all again
     }, [todos])
 ```
+
+This is all possible pre-hooks in react as well but there's something about the procedural flow of hooks that makes this all pretty easy to read through, top to bottom. The power of `useRef` was also _completely_ lost on me until the Hooks renaissance. I have a feeling I'll be using refs a whole lot more from now on.
+
+Also, if you're interested in reading more about refs or about Hooks in general Dan has a similar writeup about [using refs to solve some `setInterval` issues](https://overreacted.io/making-setinterval-declarative-with-react-hooks/).
