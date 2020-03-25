@@ -7,6 +7,6 @@ collections:
     label: 'Blog'
     folder: '_posts/'
     fields:
-      - { name: Title }
-      - { name: Excerpt }
-      - { name: Draft }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
