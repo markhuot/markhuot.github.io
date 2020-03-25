@@ -19,7 +19,7 @@ And for beginners the whole thing just feels really approachable. Look at a star
 BUT (and there's always a but), I read a comment about Javascript-based components the other day that has started to resonate with me.
 
 > I've been on the Polymer team, making web component libraries, for a long time. And while we used to promote "single file" style authoring in HTML files, we've come around (me very strongly) to the idea that it's better to do single-file components in JavaScript.
-- [source](https://news.ycombinator.com/item?id=22666536)
+> [hackernews](https://news.ycombinator.com/item?id=22666536)
 
 This is one of my struggles with the Vue approach. It seems super verbose to me to have to `import` components in my `<script>` tag and then expose them via a `components` prop just so I can use them in my `<template>`…
 
