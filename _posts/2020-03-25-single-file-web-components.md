@@ -29,4 +29,4 @@ This reasoning is exactly what I've been struggling with,
 >
 >On the other hand if you write templates in JS you can take advantage of full JavaScript expressions, imports, and natural lexical scoping... and the data is typically already in JavaScript.
 
-Exactly. Remembering `v-if` or `{% for item in array %}` is extra overhead to the JS I'm already writing. Keeping components in JS definitely increases the learning curve but also exposes so much more functionality to the component than is possible trying to write some facsimilie of HTML.
+Exactly. Remembering `v-if` or `{% raw %}{% for item in array %}{% endraw %}` is extra overhead to the JS I'm already writing. Keeping components in JS definitely increases the learning curve but also exposes so much more functionality to the component than is possible trying to write some facsimilie of HTML.
