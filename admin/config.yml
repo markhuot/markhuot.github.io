@@ -8,5 +8,5 @@ collections:
     folder: '_posts/'
     fields:
       - { name: Title }
-      - { excerpt: Excerpt }
-      - { draft: Draft }
+      - { name: Excerpt }
+      - { name: Draft }
